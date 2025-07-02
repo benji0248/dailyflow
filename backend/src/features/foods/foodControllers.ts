@@ -40,6 +40,7 @@ class FoodController {
 
     static async createFood(req: Request, res: Response): Promise<void> {
         const newFood: newFood = req.body;
+        console.log("Creating new food:", newFood);
         try {
             const food = await FoodServices.create(newFood);
             res.status(STATUS_CODES.CREATED).json(food);
